@@ -101,7 +101,7 @@ function post(characters){
 
   
 
-    //add a comment
+    //add a comment to the comment section
     function addComment(comment){
         let username=prompt("Enter username: ")
 
@@ -119,7 +119,7 @@ function post(characters){
       
       }
 
-      //deletes a comment
+      //deletes a comment from the comment section
       function deletesComment(event){
         event.target.parentNode.remove()
       
