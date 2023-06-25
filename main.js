@@ -103,8 +103,12 @@ function post(characters){
 
     //add a comment
     function addComment(comment){
+        let username=prompt("Enter username: ")
+
+
+
         let item = document.createElement('li')
-        item.innerHTML=`${comment}  `
+        item.innerHTML=`${username}: ${comment}  `
       
         let btn = document.createElement('button')
         btn.textContent = 'x'
