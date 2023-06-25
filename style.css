@@ -14,6 +14,7 @@ body {
   
   .logo img {
     height: 30px;
+    width: 1px  
   }
   
   nav ul {
@@ -33,19 +34,18 @@ body {
   }
 
   .content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto;
+    /* flex-direction: row; */
   }
   
   .post {
+    border-radius: 25px;
     padding: 20px;
     margin: 10px;
     vertical-align: middle;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-
-    /* padding: 10px;
-    text-align: center; */
+    /* padding: 10px;*/
+    text-align: center; 
     background-color: rgb(161, 100, 218); /* purplish */
   }
   
@@ -64,8 +64,7 @@ body {
   }
   
   .post button {
-    background-color: white; /* white */
-    color: black; /* black */
+   
     padding: 10px 20px;
     align-self: right;
     /* border: none; */
@@ -79,7 +78,5 @@ body {
   .post button:hover {
     background-color: lightpink; /* light Pink */
   }
-  .post button::after {
-    background-color: rgb(230, 58, 58); /* light Red */
-  }
+ 
   

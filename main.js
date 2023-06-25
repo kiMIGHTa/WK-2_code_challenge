@@ -17,8 +17,9 @@ function post(characters){
     characters.forEach((character) =>{
     
     //create an image element for our cute animals
-    let content=document.querySelector('div')
+    let content=document.getElementById('content')
     let divContent=document.createElement('div')
+    divContent.className="post"
     
 
     let img=document.createElement('img')
@@ -38,14 +39,17 @@ function post(characters){
          votes++
          btn.innerHTML = 'Liked!'
          character.votes++
+         btn.style.backgroundColor = "red"
     }else if(character.votes > 0){
         votes--
         btn.innerHTML = 'like'
         character.votes--
+        btn.style.backgroundColor = "white"
+        btn.style.color = "black"
 
 
     }
-    
+
     // votes++
     // btn.innerHTML = 'Liked!'
     // // btn.disabled = true
