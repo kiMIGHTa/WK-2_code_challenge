@@ -4,26 +4,23 @@ fetch('http://localhost:3000/characters')
 
 // function renderCharacters(characters){
 //     console.log(characters)
-//     const main = document.querySelector('div')
-//     characters.forEach(character=>{
-//         const p=document.createElement('p')
-//         p.innerHTML=`${character.id} ${character.name}`
-//         main.appendChild(p)
-//     })
-//     // console.log(characters.name)
+
+//     characters.forEach((character)=>console.log(character["name"]))
 
 
 // }
 
-function post(characters){
+function post(character){
+    character.forEach((character) =>{
+    
     //create an image element for our cute animals
-    var content=document.querySelector('div')
+    let content=document.querySelector('div')
     let divContent=document.createElement('div')
+    divContent.id="1"
 
     let img=document.createElement('img')
-    img.src="https://thumbs.gfycat.com/EquatorialIckyCat-max-1mb.gif"
+    img.src = character.image
     divContent.appendChild(img)
-    content.appendChild(divContent)
 
     //create a like button
    var btn=document.createElement('button')
@@ -32,7 +29,7 @@ function post(characters){
 
    divContent.appendChild(btn)
    btn.addEventListener('click',function (){
-    let votes = 0
+    let votes = character.votes
     let isLiked=false
     if(isLiked){
     votes--
@@ -48,15 +45,17 @@ function post(characters){
     console.log(`LikeCount: ${votes}`)
    })
         
-    
-    
+content.appendChild(divContent)
 
     
+    
 
-}
+    
+    }
+)}
 
-// post()
+// // post()
 
-document.addEventListener('DOMContentLoaded', function(){
-    post()
-})
+// document.addEventListener('DOMContentLoaded', function(){
+//     renderCharacters()
+// })
