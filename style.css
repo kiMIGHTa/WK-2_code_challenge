@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: pink; /* Pink */
+  }
+  
+  header {
+    background-color: navy;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .post {
+    padding: 20px;
+    margin: 10px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+
+    /* padding: 10px;
+    text-align: center; */
+    background-color: rgb(161, 100, 218); /* purplish */
+  }
+  
+  .post img {
+    height: auto;
+    width: auto;
+  }
+  
+  .post h3 {
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .post p {
+    color: #888;
+  }
+  
+  .post button {
+    background-color: white; /* white */
+    color: black; /* black */
+    padding: 10px 20px;
+    align-self: right;
+    /* border: none; */
+    cursor: pointer;
+    /* padding: 20px; */
+    margin: 10px;
+    border-radius: 25px;
+
+  }
+  
+  .post button:hover {
+    background-color: lightpink; /* light Pink */
+  }
+  .post button::after {
+    background-color: rgb(230, 58, 58); /* light Red */
+  }
+  
