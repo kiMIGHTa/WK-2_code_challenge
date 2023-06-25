@@ -2,6 +2,9 @@ fetch('http://localhost:3000/characters')
 .then((response)=>response.json())
 .then((json)=>post(json))
 
+
+
+
 // function renderCharacters(characters){
 //     console.log(characters)
 
@@ -10,13 +13,13 @@ fetch('http://localhost:3000/characters')
 
 // }
 
-function post(character){
-    character.forEach((character) =>{
+function post(characters){
+    characters.forEach((character) =>{
     
     //create an image element for our cute animals
     let content=document.querySelector('div')
     let divContent=document.createElement('div')
-    divContent.id="1"
+    
 
     let img=document.createElement('img')
     img.src = character.image
@@ -29,33 +32,40 @@ function post(character){
 
    divContent.appendChild(btn)
    btn.addEventListener('click',function (){
+    let characterName = character.name
     let votes = character.votes
-    let isLiked=false
-    if(isLiked){
-    votes--
-    }else{
-        votes++
-        btn.innerHTML = 'Liked!'
+    if(character.votes === 0){
+         votes++
+         btn.innerHTML = 'Liked!'
+         character.votes++
+    }else if(character.votes > 0){
+        votes--
+        btn.innerHTML = 'like'
+        character.votes--
+
+
     }
+    
     // votes++
     // btn.innerHTML = 'Liked!'
     // // btn.disabled = true
 
-    isLiked = !isLiked
-    console.log(`LikeCount: ${votes}`)
+    console.log(`${characterName} LikeCount: ${votes}`)
+    characters.forEach((character)=> console.log(character) )
+
    })
+
+   
         
 content.appendChild(divContent)
+})
 
-    
-    
+}
 
-    
-    }
-)}
+
 
 // // post()
 
 // document.addEventListener('DOMContentLoaded', function(){
 //     renderCharacters()
-// })
+// }
