@@ -55,7 +55,7 @@ function post(characters){
      })
 
 
-
+    //create the comment section
      let commentSection=document.createElement('div')
      commentSection.className = 'commentSection'
     // Create the form element
@@ -100,19 +100,16 @@ function post(characters){
     commentContainer.appendChild(heading)
     commentContainer.appendChild(commentList)
 
-    //
+    // Append the comment container to comment section
     commentSection.appendChild(commentContainer)
 
 
-    // Append the form and list container to the app container
-    // const commentSection = document.createElement('div')
-    // commentSection.id = 'commentSection'
+  
 
-
-
+    //add a comment
     function addComment(comment){
         let item = document.createElement('li')
-        item.textContent=`${comment}  `
+        item.innerHTML=`${comment}  `
       
         let btn = document.createElement('button')
         btn.textContent = 'x'
@@ -122,10 +119,14 @@ function post(characters){
         commentList.appendChild(item)
       
       }
+
+      //deletes a comment
       function deletesComment(event){
         event.target.parentNode.remove()
       
       }
+
+      //Append the comment
      content.appendChild(divContent)
      content.appendChild(commentSection)
     })

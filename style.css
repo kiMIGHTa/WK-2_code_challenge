@@ -33,29 +33,28 @@ body {
     color: whitesmoke;
   }
 
-  div .content {
+   #content{
     display: flex;
     flex-direction: row;
-    /* flex-direction: row; */
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
   }
 
   .commentSection{
-    
-    width:fit-content;
     border-radius: 25px;
     padding: 20px;
     margin: 10px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     /* padding: 10px;*/
     text-align: center; 
     background-color: whitesmoke; /* whitesmoke */
   }
   .post {
-    width:fit-content;
     border-radius: 25px;
     padding: 20px;
     margin: 10px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     /* padding: 10px;*/
     text-align: center; 
     background-color: rgb(161, 100, 218); /* purplish */
@@ -71,7 +70,7 @@ body {
     color: #333;
   }
   
-  .post p {
+  .post li {
     color: #888;
   }
   
