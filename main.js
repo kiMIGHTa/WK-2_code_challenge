@@ -1,19 +1,11 @@
+//fetches data from json server
 fetch('http://localhost:3000/characters')
 .then((response)=>response.json())
 .then((json)=>post(json))
 
-
-
-
-// function renderCharacters(characters){
-//     console.log(characters)
-
-//     characters.forEach((character)=>console.log(character["name"]))
-
-
-// }
-
+//this function takes thee content from json renders it to the page
 function post(characters){
+    //iterates over every object in the json server
     characters.forEach((character) =>{
     
     //create an image element for our cute animals
@@ -35,6 +27,8 @@ function post(characters){
    btn.addEventListener('click',function (){
     let characterName = character.name
     let votes = character.votes
+
+    //Ensures that you can only vote once for each animal
     if(character.votes === 0){
          votes++
          btn.innerHTML = 'Liked!'
@@ -50,6 +44,7 @@ function post(characters){
 
     }
     
+    //logs the like count and the updated object array of characters 
     console.log(`${characterName} LikeCount: ${votes}`)
     characters.forEach((character)=> console.log(character) ) 
      })
@@ -126,7 +121,7 @@ function post(characters){
       
       }
 
-      //Append the comment
+      //Append the comment section and posts to the page
      content.appendChild(divContent)
      content.appendChild(commentSection)
     })
@@ -135,8 +130,4 @@ function post(characters){
 
 
 
-// // post()
 
-// document.addEventListener('DOMContentLoaded', function(){
-//     renderCharacters()
-// })
