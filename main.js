@@ -1,10 +1,15 @@
+//function is called bt the render all animals button
+function renderPage(){
 //fetches data from json server
 fetch('http://localhost:3000/characters')
 .then((response)=>response.json())
 .then((json)=>post(json))
+}
+
 
 //this function takes thee content from json renders it to the page
 function post(characters){
+
     //iterates over every object in the json server
     characters.forEach((character) =>{
     

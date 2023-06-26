@@ -76,9 +76,7 @@ body {
    
     padding: 10px 20px;
     align-self: right;
-    /* border: none; */
     cursor: pointer;
-    /* padding: 20px; */
     margin: 10px;
     border-radius: 25px;
 
@@ -87,5 +85,23 @@ body {
   .post button:hover {
     background-color: lightpink; /* light Pink */
   }
+
+  #animalButton{
+    text-align: center;
+  }
  
+
+  #render {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 50px;
+    color: white;
+    background-color: navy;
+
+  }
+
+  #render:hover {
+    background-color: rgb(61, 61, 165); /* light navy blue  */
+  }
   
