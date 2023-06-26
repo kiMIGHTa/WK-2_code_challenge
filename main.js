@@ -31,28 +31,41 @@ function post(characters){
    divContent.appendChild(btn)
    btn.addEventListener('click',function (){
     let characterName = character.name
-    let votes = character.votes
+    let individualVote = 0
 
     //Ensures that you can only vote once for each animal
-    if(character.votes === 0){
-         votes++
-         btn.innerHTML = 'Liked!'
+    if(individualVote === 0){
+         individualVote++
          character.votes++
+         btn.innerHTML = `Liked!: ${character.votes}`
          btn.style.backgroundColor = "red"
-    }else if(character.votes > 0){
-        votes--
-        btn.innerHTML = 'like'
+         updateData()
+    }else if(individualVote> 0){
+        individualVote--
         character.votes--
+        btn.innerHTML = `like: ${character.votes}`
         btn.style.backgroundColor = "white"
         btn.style.color = "black"
-
-
+        updateData()
     }
     
     //logs the like count and the updated object array of characters 
-    console.log(`${characterName} LikeCount: ${votes}`)
+    console.log(`${characterName} LikeCount: ${character.votes}`)
     characters.forEach((character)=> console.log(character) ) 
      })
+
+     function updateData(){
+      fetch(`http://localhost:3000/characters/${character.id}`, {
+        method: 'PATCH',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(characters)
+      })
+      .then(res => res.json())
+      .then(character => console.log(character))
+
+     }
 
 
     //create the comment section
