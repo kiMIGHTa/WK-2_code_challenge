@@ -1,4 +1,4 @@
-//function is called bt the render all animals button
+//function is called to the render all animals button
 function renderPage(){
 //fetches data from json server
 fetch('http://localhost:3000/characters')
@@ -79,10 +79,11 @@ function post(characters){
         form.reset()
       })
 
-
+      //append input to form
     form.appendChild(input)
+
+    //append form to  comment section
     commentSection.appendChild(form)
-    // form.appendChild(submitInput);
 
     // Create the list container
     const commentContainer = document.createElement('div')
