@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: auto;
+    height: 100px;
     width: auto;
   }
 
